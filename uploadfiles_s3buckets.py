@@ -18,6 +18,8 @@ data_list = open('./listobjects_s3buckets.py').read()
 
 session.resource('s3').Bucket('raulys3bucket').put_object(Key='myproject/credential.py', Body=data_crential)
 session.resource('s3').Bucket('raulys3bucket').put_object(Key='myproject/listobjects_s3buckets.py', Body=data_list)
+session.resource('s3').Bucket('raulys3bucket').put_object(Key='myproject/uploadfiles_s3buckets.py', Body=data_list)
+
 # revisar en mi s3 de aws pq no soporta el ACL='public-read' en el put_object de la linea de arriba
 
 #esto me crea un objeto vacio dentro de un bucket s3
