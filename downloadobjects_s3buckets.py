@@ -18,7 +18,8 @@ if __name__ == "__main__":
         main()
     except ConnectionRefusedError:
         print("no se pudo concentar")    
-    except exceptions.ClientError:
-        print("objeto no encontrado")    
+    except exceptions.ClientError as e:
+        if e.response["Error"]["Code"] == "404":
+            print("objeto no encontrado")    
     except KeyboardInterrupt:
         print("\n saliendo")    
